@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="on-off.css">
+    <title>Storm00530</title>
+
+</head>
+
+<body>
+    <main class="main">
+        <div class="mainpad">
+            <div class="board">
+                <div class="header">
+                    <h1 class="head">🌝 Storm00530</h1>
+                </div>
+               <div class="switch_area">
+                <input type="checkbox" id="switch">
+                <label for="switch"></label>
+               </div>
+                <div class="display">
+                    <form name="form">
+                        <textarea class="txtview" id="txt_comments" name="txtview" rows="2" cols="35">
+                    </textarea>
+                    </form>
+
+                </div>
+                <div id="button-pad">
+
+                </div>
+                <div class="warning">
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="footer">
+        @copyright-2020
+    </div>
+    <script>
+        var pattern = ['AC', 'OFF', '(', ')', 'Back', 'EXP', 'LOG', '+', '7', '8', '9', '-', '4', '5', '6', '*', '1', '2', '3', '/', '0', '.', '=', '%'];
+        var i, str = '';
+        var contents = '';
+        var dis = document.getElementById("txt_comments");
+        var switch_check=document.getElementById("switch");
+        dis.disabled = true;
+        for (i = 0; i < 24; i++) {
+            if (i > 0 && i % 4 == 0) str = str + '<br>';
+            str = str + '<button class="button" onclick="calc(' + '\'' + pattern[i] + "\'" + ')">' + pattern[i] + '</button>';
+        }
+        var pad = document.getElementById('button-pad');
+        pad.innerHTML = str;
+    </script>
+    <script src="main.js"></script>
+</body>
+
+</html>
